@@ -5,14 +5,9 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using System.Web.UI.WebControls.WebParts;
 using System.Windows;
 using System.Windows.Forms;
-using System.Windows.Shapes;
+using Microsoft.VisualBasic;
 
 namespace LethalCompanySaveManager
 {
@@ -173,8 +168,8 @@ namespace LethalCompanySaveManager
 
 			if (editionStatus)
 			{
-				MessageBoxResult confirmResult = System.Windows.MessageBox.Show("You have a backup open, are you sure you'd like to quit?", "Confirm Close", MessageBoxButton.YesNo);
-				if (confirmResult == MessageBoxResult.Yes)
+				DialogResult confirmResult = MessageBox.Show("You have a backup open, are you sure you'd like to quit?", "Confirm Close", MessageBoxButtons.YesNo);
+				if (confirmResult == DialogResult.Yes)
 				{
 					File.WriteAllBytes(CustomBackupDirectory + BackupComboBox.SelectedItem, LCSecurity.Encrypt(BackupInfo.saveData));
 					System.Windows.Forms.Application.Exit();
@@ -318,9 +313,9 @@ namespace LethalCompanySaveManager
 		private void button3_Click(object sender, EventArgs e)
 		{
 			// delete game save file
-			MessageBoxResult confirmResult = System.Windows.MessageBox.Show("Are you sure to delete this item? If it's not backed up, this may not be reversible.", "Confirm Delete!!", MessageBoxButton.YesNo);
+			DialogResult confirmResult = MessageBox.Show("Are you sure to delete this item? If it's not backed up, this may not be reversible.", "Confirm Delete!!", MessageBoxButtons.YesNo);
 
-			if (confirmResult == MessageBoxResult.Yes)
+			if (confirmResult == DialogResult.Yes)
 			{
 				File.Delete(GameSavePath + Saves[SaveComboBox.SelectedIndex]);
 				SaveComboBox.SelectedIndex = 0;
@@ -374,7 +369,7 @@ namespace LethalCompanySaveManager
 			if (editionStatus)
 			{
 				// do a message box just in case
-				System.Windows.MessageBox.Show("You are editing this file, please save before you delete.", "Notice", MessageBoxButton.OK);
+				MessageBox.Show("You are editing this file, please save before you delete.", "Notice", MessageBoxButtons.OK);
 				return;
 			}
 			string selectedFile = CustomBackupDirectory + BackupComboBox.SelectedItem;
@@ -415,7 +410,7 @@ namespace LethalCompanySaveManager
 			if (editionStatus)
 			{
 				BackupComboBox.Enabled = false;
-				MessageBoxResult confirmChanges = System.Windows.MessageBox.Show("You need to click \"Confirm.\"", "Notice", MessageBoxButton.OK);
+				DialogResult confirmChanges = MessageBox.Show("You need to click \"Confirm.\"", "Notice", MessageBoxButtons.OK);
 			}
 		}
 
@@ -429,7 +424,7 @@ namespace LethalCompanySaveManager
 			if (editionStatus)
 			{
 				// do a message box just in case
-				MessageBoxResult confirmChanges = System.Windows.MessageBox.Show("You are already editing this file.", "Notice", MessageBoxButton.OK);
+				DialogResult confirmChanges = MessageBox.Show("You are already editing this file.", "Notice", MessageBoxButtons.OK);
 				return;
 			}
 			try
