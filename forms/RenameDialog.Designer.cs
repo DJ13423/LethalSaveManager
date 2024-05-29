@@ -1,4 +1,4 @@
-﻿namespace LethalCompanySaveManager.forms
+﻿namespace LethalSaveManager.forms
 {
 	partial class RenameDialog
 	{
@@ -20,132 +20,138 @@
 			base.Dispose(disposing);
 		}
 
-		#region Windows Form Designer generated code
+        #region Windows Form Designer generated code
 
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenameDialog));
-			this.thisNotifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-			this.label13 = new System.Windows.Forms.Label();
-			this.AbortButton = new System.Windows.Forms.Button();
-			this.panel4 = new System.Windows.Forms.Panel();
-			this.fileNameTextBox = new System.Windows.Forms.TextBox();
-			this.SaveButton = new System.Windows.Forms.Button();
-			this.label2 = new System.Windows.Forms.Label();
-			this.panel4.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// thisNotifyIcon
-			// 
-			this.thisNotifyIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info;
-			this.thisNotifyIcon.BalloonTipText = "I\'m still here";
-			this.thisNotifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("thisNotifyIcon.Icon")));
-			this.thisNotifyIcon.Text = "EZAudioSwitcher";
-			this.thisNotifyIcon.Visible = true;
-			// 
-			// label13
-			// 
-			this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
-			this.label13.Location = new System.Drawing.Point(3, 27);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(204, 20);
-			this.label13.TabIndex = 61;
-			this.label13.Text = "Please enter the new filename";
-			this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// AbortButton
-			// 
-			this.AbortButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-			this.AbortButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.AbortButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(236)))));
-			this.AbortButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.AbortButton.Location = new System.Drawing.Point(6, 80);
-			this.AbortButton.Name = "AbortButton";
-			this.AbortButton.Size = new System.Drawing.Size(88, 23);
-			this.AbortButton.TabIndex = 46;
-			this.AbortButton.Text = "Abort";
-			this.AbortButton.UseVisualStyleBackColor = false;
-			// 
-			// panel4
-			// 
-			this.panel4.AutoScroll = true;
-			this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(4)))), ((int)(((byte)(13)))), ((int)(((byte)(18)))));
-			this.panel4.Controls.Add(this.fileNameTextBox);
-			this.panel4.Controls.Add(this.label13);
-			this.panel4.Controls.Add(this.AbortButton);
-			this.panel4.Controls.Add(this.SaveButton);
-			this.panel4.Controls.Add(this.label2);
-			this.panel4.Location = new System.Drawing.Point(2, 1);
-			this.panel4.Name = "panel4";
-			this.panel4.Size = new System.Drawing.Size(215, 110);
-			this.panel4.TabIndex = 28;
-			// 
-			// fileNameTextBox
-			// 
-			this.fileNameTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(61)))), ((int)(((byte)(61)))));
-			this.fileNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.fileNameTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-			this.fileNameTextBox.Location = new System.Drawing.Point(6, 50);
-			this.fileNameTextBox.Name = "fileNameTextBox";
-			this.fileNameTextBox.Size = new System.Drawing.Size(201, 24);
-			this.fileNameTextBox.TabIndex = 64;
-			// 
-			// SaveButton
-			// 
-			this.SaveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(91)))), ((int)(((byte)(61)))));
-			this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.SaveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(247)))), ((int)(((byte)(236)))));
-			this.SaveButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-			this.SaveButton.Location = new System.Drawing.Point(119, 80);
-			this.SaveButton.Name = "SaveButton";
-			this.SaveButton.Size = new System.Drawing.Size(88, 23);
-			this.SaveButton.TabIndex = 22;
-			this.SaveButton.Text = "Confirm";
-			this.SaveButton.UseVisualStyleBackColor = false;
-			this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-			// 
-			// label2
-			// 
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
-			this.label2.Location = new System.Drawing.Point(7, 3);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(200, 24);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Rename";
-			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// RenameDialog
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-			this.ClientSize = new System.Drawing.Size(217, 111);
-			this.Controls.Add(this.panel4);
-			this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(177)))), ((int)(((byte)(166)))));
-			this.Name = "RenameDialog";
-			this.Text = "RenameDialog";
-			this.Load += new System.EventHandler(this.RenameDialog_Load);
-			this.panel4.ResumeLayout(false);
-			this.panel4.PerformLayout();
-			this.ResumeLayout(false);
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            label2 = new Label();
+            confirmButton = new Button();
+            cancelButton = new Button();
+            fileNameTextBox = new TextBox();
+            panel1 = new Panel();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            SuspendLayout();
+            // 
+            // label2
+            // 
+            label2.Font = new Font("Microsoft Sans Serif", 14F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(252, 25, 0);
+            label2.Location = new Point(18, 20);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(234, 28);
+            label2.TabIndex = 1;
+            label2.Text = "Rename Save";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // confirmButton
+            // 
+            confirmButton.BackColor = Color.FromArgb(24, 91, 61);
+            confirmButton.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            confirmButton.ForeColor = Color.FromArgb(217, 247, 236);
+            confirmButton.ImageAlign = ContentAlignment.TopCenter;
+            confirmButton.Location = new Point(149, 100);
+            confirmButton.Margin = new Padding(4, 3, 4, 3);
+            confirmButton.Name = "confirmButton";
+            confirmButton.Size = new Size(103, 27);
+            confirmButton.TabIndex = 2;
+            confirmButton.Text = "Rename";
+            confirmButton.UseVisualStyleBackColor = false;
+            confirmButton.Click += SaveButton_Click;
+            // 
+            // cancelButton
+            // 
+            cancelButton.BackColor = Color.FromArgb(124, 61, 61);
+            cancelButton.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cancelButton.ForeColor = Color.FromArgb(217, 247, 236);
+            cancelButton.ImageAlign = ContentAlignment.TopCenter;
+            cancelButton.Location = new Point(18, 100);
+            cancelButton.Margin = new Padding(4, 3, 4, 3);
+            cancelButton.Name = "cancelButton";
+            cancelButton.Size = new Size(103, 27);
+            cancelButton.TabIndex = 1;
+            cancelButton.Text = "Back";
+            cancelButton.UseVisualStyleBackColor = false;
+            cancelButton.Click += CancelButton_Click;
+            // 
+            // fileNameTextBox
+            // 
+            fileNameTextBox.BackColor = Color.FromArgb(24, 61, 61);
+            fileNameTextBox.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            fileNameTextBox.ForeColor = Color.FromArgb(247, 247, 247);
+            fileNameTextBox.Location = new Point(18, 65);
+            fileNameTextBox.Margin = new Padding(4, 3, 4, 3);
+            fileNameTextBox.Name = "fileNameTextBox";
+            fileNameTextBox.Size = new Size(234, 26);
+            fileNameTextBox.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.FromArgb(56, 0, 0);
+            panel1.Controls.Add(confirmButton);
+            panel1.Controls.Add(cancelButton);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(fileNameTextBox);
+            panel1.Location = new Point(3, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(270, 160);
+            panel1.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(56, 0, 0);
+            panel2.Controls.Add(panel3);
+            panel2.Location = new Point(3, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(288, 179);
+            panel2.TabIndex = 4;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(154, 0, 0);
+            panel3.Controls.Add(panel1);
+            panel3.Location = new Point(6, 6);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(276, 167);
+            panel3.TabIndex = 5;
+            // 
+            // RenameDialog
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(154, 0, 0);
+            ClientSize = new Size(294, 185);
+            Controls.Add(panel2);
+            ForeColor = Color.FromArgb(147, 177, 166);
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "RenameDialog";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Rename Save File";
+            Load += RenameDialog_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ResumeLayout(false);
+        }
 
-		}
+        #endregion
 
-		#endregion
-
-		private System.Windows.Forms.NotifyIcon thisNotifyIcon;
-		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Button AbortButton;
-		private System.Windows.Forms.Panel panel4;
-		private System.Windows.Forms.Button SaveButton;
-		private System.Windows.Forms.Label label2;
-		internal System.Windows.Forms.TextBox fileNameTextBox;
-	}
+        private Label label2;
+        private Button confirmButton;
+        private Button cancelButton;
+        internal TextBox fileNameTextBox;
+        private Panel panel1;
+        private Panel panel2;
+        private Panel panel3;
+    }
 }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LethalCompanySaveManager
+namespace LethalSaveManager
 {
 	public class LCPlayer : ISaveInterface
 	{
@@ -24,13 +24,6 @@ namespace LethalCompanySaveManager
 		// Player stats
 		public static readonly string FinishedShockMinigame = "FinishedShockMinigame"; // int
 		public static readonly string TimesLanded = "TimesLanded"; //int
-
-		// Player parameters
-		public static readonly string Gamma = "Gamma"; //float
-		public static readonly string MasterVolume = "MasterVolume"; //float
-		public static readonly string StartInOnlineMode = "StartInOnlineMode"; // bool
-		public static readonly string HostPublicGame = "HostSettings_Public"; // bool
-		public static readonly string HostName = "HostSettings_Name"; // string
 		#endregion
 
 		#region SaveProperties
@@ -143,76 +136,6 @@ namespace LethalCompanySaveManager
 				WriteToAttribute(TimesLanded, value.ToString());
 			}
 		}
-		private float _gamma;
-		public float gamma
-		{
-			get
-			{
-				return _gamma;
-			}
-
-			set
-			{
-				_gamma = value;
-				WriteToAttribute(Gamma, value.ToString());
-			}
-		}
-		private float _masterVolume;
-		public float masterVolume
-		{
-			get
-			{
-				return _masterVolume;
-			}
-
-			set
-			{
-				_masterVolume = value;
-				WriteToAttribute(MasterVolume, value.ToString());
-			}
-		}
-		private bool _startInOnlineMode;
-		public bool startInOnlineMode
-		{
-			get
-			{
-				return _startInOnlineMode;
-			}
-
-			set
-			{
-				_startInOnlineMode = value;
-				WriteToAttribute(StartInOnlineMode, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _hostPublicGame;
-		private string _hostName;
-		public bool hostPublicGame
-		{
-			get
-			{
-				return _hostPublicGame;
-			}
-
-			set
-			{
-				_hostPublicGame = value;
-				WriteToAttribute(HostPublicGame, value.ToString().ToLowerInvariant());
-			}
-		}
-		public string hostName
-		{
-			get
-			{
-				return _hostName;
-			}
-
-			set
-			{
-				_hostName = value;
-				WriteToAttribute(HostName, value);
-			}
-		}
 		#endregion
 
 		public LCPlayer()
@@ -222,12 +145,11 @@ namespace LethalCompanySaveManager
 
 		public void Load()
 		{
-			FileInfo PlayerSaveFile = new FileInfo(LCSE.GameSavePath + LCSE.PlayerSave);
+			FileInfo PlayerSaveFile = new FileInfo(MainForm.GameSavePath + MainForm.PlayerSave);
 			if (!PlayerSaveFile.Exists) { return; }
 
 			bool boul = false;
 			int ount = 1;
-			float flout = 0f;
 
 			saveData = LCSecurity.Decrypt(File.ReadAllBytes(PlayerSaveFile.ToString()));
 
@@ -239,17 +161,11 @@ namespace LethalCompanySaveManager
 			hasUsedTerminal = bool.TryParse(GetDataFromSave(HasUsedTerminal), out boul) ? boul : false;
 			finishedShockMinigame = int.TryParse(GetDataFromSave(FinishedShockMinigame), out ount) ? ount : 0;
 			timesLanded = int.TryParse(GetDataFromSave(TimesLanded), out ount) ? ount : 0;
-			gamma = float.TryParse(GetDataFromSave(Gamma), out flout) ? flout : 0.0f;
-			masterVolume = float.TryParse(GetDataFromSave(MasterVolume), out flout) ? flout : 0.0f;
-			startInOnlineMode = bool.TryParse(GetDataFromSave(StartInOnlineMode), out boul) ? boul : false;
-			hostPublicGame = bool.TryParse(GetDataFromSave(HostPublicGame), out boul) ? boul : false;
-			//remove '"' at the beginning and end of the hostname
-			string tempHost = GetDataFromSave(HostName);
-			tempHost = tempHost.Remove(0, 1);
-			tempHost = tempHost.Remove(tempHost.Length - 1, 1);
-			hostName = tempHost;
 		}
 
+		/// <summary>
+		/// Gets the value of the attribute from the save file
+		/// </summary>
 		public string GetDataFromSave(string attribute)
 		{
 			if (!saveData.Contains(attribute))
@@ -263,6 +179,9 @@ namespace LethalCompanySaveManager
 			return resultStr;
 		}
 
+		/// <summary>
+		/// Writes a new value to the attribute in the save file
+		/// </summary>
 		public string WriteToAttribute(string attribute, string newValue)
 		{
 			if (!saveData.Contains(attribute))

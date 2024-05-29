@@ -1,4 +1,4 @@
-﻿using LethalCompanySaveManager.entity;
+﻿using LethalSaveManager.entity;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LethalCompanySaveManager
+namespace LethalSaveManager
 {
 	public class LCSave : ISaveInterface
 	{
@@ -31,35 +31,13 @@ namespace LethalCompanySaveManager
 		public static readonly string ShipScrapValues = "shipScrapValues"; // Multiple IDs values
 
 		//Stats
-		public static readonly string StepsTaken = "Stats_StepsTaken";
 		public static readonly string ValueCollected = "Stats_ValueCollected";
-		public static readonly string Deaths = "Stats_Deaths";
 		public static readonly string DaySpent = "Stats_DaysSpent";
-		public static readonly string EnemyScans = "EnemyScans"; // Multiple IDs values
-		public static readonly string StoryLogs = "StoryLogs"; // Multiple IDs values
 
 		//Ship unlocked assets
 		public static readonly string UnlockedShipObjects = "UnlockedShipObjects"; // Multiple IDs values
 		public static readonly string ShipGrabbableItems = "shipGrabbableItemIDs"; // Multiple IDs values
 		public static readonly string ShipGrabbableItemPos = "shipGrabbableItemPos"; // Mutiple Unity Engine Vector3 values
-
-		//Ship boosts
-		public static readonly string Teleporter = "ShipUnlockStored_Teleporter";
-		public static readonly string InverseTeleporter = "ShipUnlockStored_Inverse Teleporter";
-		public static readonly string LoudHorn = "ShipUnlockStored_Loud horn";
-		public static readonly string SignalTransmitter = "ShipUnlockStored_Signal transmitter";
-
-		//Junks
-		public static readonly string JackOLantern = "ShipUnlockStored_JackOLantern";
-		public static readonly string BunkBeds = "ShipUnlockStored_Bunkbeds";
-		public static readonly string RomanticTable = "ShipUnlockStored_Romantic table";
-		public static readonly string Table = "ShipUnlockStored_Table";
-		public static readonly string RecordPlayer = "ShipUnlockStored_Record player";
-		public static readonly string Shower = "ShipUnlockStored_Shower";
-		public static readonly string Toilet = "ShipUnlockStored_Toilet";
-		public static readonly string FileCabinet = "ShipUnlockStored_File Cabinet";
-		public static readonly string Cupboard = "ShipUnlockStored_Cupboard";
-		public static readonly string Television = "ShipUnlockStored_Television";
 		#endregion
 
 		#region Save Properties
@@ -192,20 +170,6 @@ namespace LethalCompanySaveManager
 				WriteToAttribute(GameVer, value.ToString());
 			}
 		}
-		private int _stepsTaken;
-		public int stepsTaken
-		{
-			get
-			{
-				return _stepsTaken;
-			}
-
-			set
-			{
-				_stepsTaken = value;
-				WriteToAttribute(StepsTaken, value.ToString());
-			}
-		}
 		private int _valueCollected;
 		public int valueCollected
 		{
@@ -218,20 +182,6 @@ namespace LethalCompanySaveManager
 			{
 				_valueCollected = value;
 				WriteToAttribute(ValueCollected, value.ToString());
-			}
-		}
-		private int _deaths;
-		public int deaths
-		{
-			get
-			{
-				return _deaths;
-			}
-
-			set
-			{
-				_deaths = value;
-				WriteToAttribute(Deaths, value.ToString());
 			}
 		}
 		private int _daySpent;
@@ -248,206 +198,6 @@ namespace LethalCompanySaveManager
 				WriteToAttribute(DaySpent, value.ToString());
 			}
 		}
-
-		#region isStoredItems
-		// ERRATUS : isStored
-		private bool _teleporter;
-		public bool isAcquiredTeleporter
-		{
-			get
-			{
-				return _teleporter;
-			}
-
-			set
-			{
-				_teleporter = value;
-				WriteToAttribute(Teleporter, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _inverseTeleporter;
-		public bool isAcquiredInverseTeleporter
-		{
-			get
-			{
-				return _inverseTeleporter;
-			}
-
-			set
-			{
-				_inverseTeleporter = value;
-				WriteToAttribute(InverseTeleporter, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _loudHorn;
-		public bool isAcquiredLoudHorn
-		{
-			get
-			{
-				return _loudHorn;
-			}
-
-			set
-			{
-				_loudHorn = value;
-				WriteToAttribute(LoudHorn, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _signalTransmitter;
-		public bool isAcquiredSignalTransmitter
-		{
-			get
-			{
-				return _signalTransmitter;
-			}
-
-			set
-			{
-				_signalTransmitter = value;
-				WriteToAttribute(SignalTransmitter, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _jackolantern;
-		public bool isAcquiredJackOLantern
-		{
-			get
-			{
-				return _jackolantern;
-			}
-
-			set
-			{
-				_jackolantern = value;
-				WriteToAttribute(JackOLantern, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _bunkbeds;
-		public bool isAcquiredBunkBeds
-		{
-			get
-			{
-				return _bunkbeds;
-			}
-
-			set
-			{
-				_bunkbeds = value;
-				WriteToAttribute(BunkBeds, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _romanticTable;
-		public bool isAcquiredRomanticTable
-		{
-			get
-			{
-				return _romanticTable;
-			}
-
-			set
-			{
-				_romanticTable = value;
-				WriteToAttribute(RomanticTable, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _table;
-		public bool isAcquiredTable
-		{
-			get
-			{
-				return _table;
-			}
-
-			set
-			{
-				_table = value;
-				WriteToAttribute(Table, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _recordPlayer;
-		public bool isAcquiredRecordPlayer
-		{
-			get
-			{
-				return _recordPlayer;
-			}
-
-			set
-			{
-				_recordPlayer = value;
-				WriteToAttribute(RecordPlayer, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _shower;
-		public bool isAcquiredShower
-		{
-			get
-			{
-				return _shower;
-			}
-
-			set
-			{
-				_shower = value;
-				WriteToAttribute(Shower, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _toilet;
-		public bool isAcquiredToilet
-		{
-			get
-			{
-				return _toilet;
-			}
-
-			set
-			{
-				_toilet = value;
-				WriteToAttribute(Toilet, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _fileCabinet;
-		public bool isAcquiredFileCabinet
-		{
-			get
-			{
-				return _fileCabinet;
-			}
-
-			set
-			{
-				_fileCabinet = value;
-				WriteToAttribute(FileCabinet, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _cupboard;
-		public bool isAcquiredCupboard
-		{
-			get
-			{
-				return _cupboard;
-			}
-
-			set
-			{
-				_cupboard = value;
-				WriteToAttribute(Cupboard, value.ToString().ToLowerInvariant());
-			}
-		}
-		private bool _television;
-		public bool isAcquiredTelevision
-		{
-			get
-			{
-				return _television;
-			}
-
-			set
-			{
-				_television = value;
-				WriteToAttribute(Television, value.ToString().ToLowerInvariant());
-			}
-		}
-		#endregion
 		#endregion
 
 		#region Array values
@@ -463,34 +213,6 @@ namespace LethalCompanySaveManager
 			{
 				_shipScrapValues = value;
 				WriteArrayToAttribute(ShipScrapValues, value);
-			}
-		}
-		private int[] _enemyScans;
-		public int[] enemyScans
-		{
-			get
-			{
-				return _enemyScans;
-			}
-
-			set
-			{
-				_enemyScans = value;
-				WriteArrayToAttribute(EnemyScans, value);
-			}
-		}
-		private int[] _storyLogs;
-		public int[] storyLogs
-		{
-			get
-			{
-				return _storyLogs;
-			}
-
-			set
-			{
-				_storyLogs = value;
-				WriteArrayToAttribute(StoryLogs, value);
 			}
 		}
 		private int[] _unlockedObjects;
@@ -551,8 +273,8 @@ namespace LethalCompanySaveManager
 			if (!SaveFile.Exists) { return; }
 
 			saveData = LCSecurity.Decrypt(File.ReadAllBytes(SaveFile.ToString()));
+
 			int titi;
-			bool toto;
 
 			#region Single Value Get
 			credits = int.TryParse(GetDataFromSave(Credits), out titi) ? titi : 60;
@@ -564,34 +286,13 @@ namespace LethalCompanySaveManager
 			quotaFulfilled = int.TryParse(GetDataFromSave(QuotaFulfilled), out titi) ? titi : 0;
 			time = int.TryParse(GetDataFromSave(Time), out titi) ? titi : 3000;
 			gameVer = int.TryParse(GetDataFromSave(GameVer), out titi) ? titi : 45;
-			stepsTaken = int.TryParse(GetDataFromSave(StepsTaken), out titi) ? titi : 0;
 			valueCollected = int.TryParse(GetDataFromSave(ValueCollected), out titi) ? titi : 0;
-			deaths = int.TryParse(GetDataFromSave(Deaths), out titi) ? titi : 0;
 			daySpent = int.TryParse(GetDataFromSave(DaySpent), out titi) ? titi : 0;
 
-			isAcquiredTeleporter = bool.TryParse(GetDataFromSave(Teleporter), out toto) ? toto : false;
-			isAcquiredInverseTeleporter = bool.TryParse(GetDataFromSave(InverseTeleporter), out toto) ? toto : false;
-			isAcquiredLoudHorn = bool.TryParse(GetDataFromSave(LoudHorn), out toto) ? toto : false;
-			isAcquiredSignalTransmitter = bool.TryParse(GetDataFromSave(SignalTransmitter), out toto) ? toto : false;
-			isAcquiredJackOLantern = bool.TryParse(GetDataFromSave(JackOLantern), out toto) ? toto : false;
-			isAcquiredBunkBeds = bool.TryParse(GetDataFromSave(BunkBeds), out toto) ? toto : false;
-			isAcquiredRomanticTable = bool.TryParse(GetDataFromSave(RomanticTable), out toto) ? toto : false;
-			isAcquiredTable = bool.TryParse(GetDataFromSave(Table), out toto) ? toto : false;
-			isAcquiredRecordPlayer = bool.TryParse(GetDataFromSave(RecordPlayer), out toto) ? toto : false;
-			isAcquiredShower = bool.TryParse(GetDataFromSave(Shower), out toto) ? toto : false;
-			isAcquiredToilet = bool.TryParse(GetDataFromSave(Toilet), out toto) ? toto : false;
-			isAcquiredFileCabinet = bool.TryParse(GetDataFromSave(FileCabinet), out toto) ? toto : false;
-			isAcquiredCupboard = bool.TryParse(GetDataFromSave(Cupboard), out toto) ? toto : false;
-			isAcquiredTelevision = bool.TryParse(GetDataFromSave(Television), out toto) ? toto : false;
 			#endregion
 
-			// TODO : Make a Form with a DataGridView to display these multiple values
-			// Precondition : Need a chart of IDs and Names of in-game objects (as grabbable items are both scraps and objects)
-			// Need a Dictionary<int, LCObject>.
 			#region Multiple Value Get
 			shipScrapValues = GetIdsFromValues(GetValuesFromString(GetDataFromSave(ShipScrapValues)));
-			enemyScans = GetIdsFromValues(GetValuesFromString(GetDataFromSave(EnemyScans)));
-			storyLogs = GetIdsFromValues(GetValuesFromString(GetDataFromSave(StoryLogs)));
 			unlockedShipObjects = GetIdsFromValues(GetValuesFromString(GetDataFromSave(UnlockedShipObjects)));
 			shipGrabbableItems = GetIdsFromValues(GetValuesFromString(GetDataFromSave(ShipGrabbableItems)));
 			shipGrabbableItemPos = GetVectorFromSaveData(ShipGrabbableItemPos);

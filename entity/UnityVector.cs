@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LethalCompanySaveManager.entity
+namespace LethalSaveManager.entity
 {
 	public class UnityVector
 	{

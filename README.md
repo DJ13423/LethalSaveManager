@@ -1,39 +1,35 @@
-<p>
-  <img width="100%" src="(https://private-user-images.githubusercontent.com/23708480/293814007-e2c34998-a835-46b2-b077-61b718686e39.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MDQyNDM4NTksIm5iZiI6MTcwNDI0MzU1OSwicGF0aCI6Ii8yMzcwODQ4MC8yOTM4MTQwMDctZTJjMzQ5OTgtYTgzNS00NmIyLWIwNzctNjFiNzE4Njg2ZTM5LnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDAxMDMlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQwMTAzVDAwNTkxOVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIyNDI1MTUyNmUwOWFjODBlNGUxZWM1NjVkOGYzNGE4MTdiZTJjYTJkZThkZjMyNjJlNzE5MzkwZjEzYmRmNDcmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0JmFjdG9yX2lkPTAma2V5X2lkPTAmcmVwb19pZD0wIn0.UJcGL8vfSnfehCGY7GzSrwloswrmIDH7qsTBxmR_IL4" alt="Preview image">
-</p>
+# LethalSaveManager 🗂️
 
-# LethalCompanySaveManager
-Major thanks to [@Pickendorf](https://github.com/Pickendorf) for the recent overhaul!
+## Overview 🌟
+LethalSaveManager is a save manager for the game [*Lethal Company*](https://store.steampowered.com/app/1966720/Lethal_Company/). It allows you to manage backups of your save files easily, allowing you to have more than the default limit of 3 saves.
 
-Save editor for the game [Lethal Company]([https://store.steampowered.com/app/1966720/Lethal_Company/]).
+## Features ✨
+- Create, delete, and rename backups of your save files.
+- Manage an unlimited number of saves.
+- Built using C#, .NET 8, and WPF for a robust and user-friendly experience.
 
-### ⚡ Features
+## Installation 🔧
+You can download the latest standalone executable from the [releases page](https://github.com/DJ13423/LethalSaveManager/releases/latest).
 
-- [x] Friendly UI
-- [x] Player save editor
-- [x] World save editor
-- [x] Backup management (create/delete/rename backups from save files)
-- [x] Client checks to ensure data integrity of your save file (except for text input fields)
-- [x] Unlimited backups support
+## Usage 🚀
+1. Download the `exe` from the [releases page](https://github.com/DJ13423/LethalSaveManager/releases/latest).
+2. Run the standalone executable.
+3. Use the interface to manage your game saves.
 
-### 📝 Todo
+## Screenshot 📸
+![UI Screenshot](placeholder-for-screenshot.png)
 
-- [ ] On Ship objects management (location, unlocked, rotation, etc)
-- [ ] Enemy scans editor
-- [ ] Story logs editor
+## Contributors 👥
+- [**DJ13423**](https://github.com/DJ13423)
 
-### 🗿 Unsupported
+This project is forked from [lawrencea13/LethalCompanySaveManager](https://github.com/lawrencea13/LethalCompanySaveManager).
 
-- [x] The Lethal Company mod "MoreSaves" will not work with this tool as it modifies the save encryption method.
-- [x] Some mods will modify your save format and as so will not read save files prior to the installation of said mod.
+## License 📜
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-<br>
+## Contributing 🤝
+Contributions are welcome! If you have suggestions for improvements or find any bugs, please feel free to submit an issue or a pull request.
 
-## 🔨 Installation
+---
 
-Goto 👉 [Releases page](https://github.com/Pickendorf/LethalCompanySaveManager/releases) to download the application manually.
-
-<br>
-
-## 🍻 Credits
-- Thanks to [@nomi-san](https://github.com/nomi-san) for the README.md template.
+Thank you for using LethalSaveManager! If you encounter any issues, feel free to open an issue on GitHub.
