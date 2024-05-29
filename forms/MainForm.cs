@@ -18,7 +18,7 @@ namespace LethalSaveManager
 
         public static readonly string LocalLowPath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\AppData\\LocalLow\\";
         public static string GameSavePath = LocalLowPath + "ZeekerssRBLX\\Lethal Company\\";
-        public static readonly string DefaultSaveDirectory = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\LCSM\\GameBackups\\";
+        public static readonly string DefaultSaveDirectory = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "\\LethalSaveManager\\GameSaveBackups\\";
         public static string CustomBackupDirectory = DefaultSaveDirectory;
 
         public static readonly string PlayerSave = "LCGeneralSaveData";
@@ -76,7 +76,9 @@ namespace LethalSaveManager
 
             if (!saveDir.Exists)
             {
-                // TODO: still show file buttons but with no data ------------------------
+                gameSaveFileList.AddButton(GameSavePath + "LCSaveFile1", "File 1", "", "", "");
+                gameSaveFileList.AddButton(GameSavePath + "LCSaveFile2", "File 2", "", "", "");
+                gameSaveFileList.AddButton(GameSavePath + "LCSaveFile3", "File 3", "", "", "");
                 return;
             }
             bool saveFile1Found = false;
@@ -134,6 +136,12 @@ namespace LethalSaveManager
             backupSaveFilesPanel.VerticalScroll.Value = 0;
             Console.WriteLine("Populating backups");
             backupSaveFileList.Clear();
+
+            if (!Directory.Exists(CustomBackupDirectory))
+            {
+                Directory.CreateDirectory(CustomBackupDirectory);
+            }
+
             DirectoryInfo dir = new DirectoryInfo(CustomBackupDirectory);
 
             foreach (FileInfo item in dir.GetFiles())
@@ -161,6 +169,11 @@ namespace LethalSaveManager
         {
             Console.WriteLine("Backup selected game save button clicked");
             string backupName = "";
+
+            if (!Directory.Exists(CustomBackupDirectory))
+            {
+                Directory.CreateDirectory(CustomBackupDirectory);
+            }
 
             DirectoryInfo backupDir = new DirectoryInfo(CustomBackupDirectory);
 
@@ -190,15 +203,24 @@ namespace LethalSaveManager
 
             if (File.Exists(selectedBackup))
             {
+                if (!Directory.Exists(GameSavePath))
+                {
+                    Directory.CreateDirectory(GameSavePath);
+                }
+
                 DialogResult confirmResult = DialogResult.None;
                 if (File.Exists(selectedSave))
                 {
                     confirmResult = MessageBox.Show("Are you sure to load this backup? This will overwrite the current selected save slot.", "Confirm Load Backup", MessageBoxButtons.YesNo);
                 }
+
+                // Delete the current save file if it exists and the user confirms
                 if (File.Exists(selectedSave) && confirmResult == DialogResult.Yes)
                 {
                     FileSystem.DeleteFile(selectedSave, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
                 }
+
+                // Copy the backup to the save slot
                 if (!File.Exists(selectedSave) || confirmResult == DialogResult.Yes)
                 {
                     File.Copy(selectedBackup, selectedSave);
@@ -248,12 +270,6 @@ namespace LethalSaveManager
         private void refreshBackupList_Click(object sender, EventArgs e)
         {
             PopulateBackups();
-        }
-
-        private void backupSaveFilesPanel_Scroll(object sender, ScrollEventArgs e)
-        {
-            //backupSaveFilesPanel.VerticalScroll.Value = e.NewValue;
-            Console.WriteLine(e.NewValue);
         }
     }
 }

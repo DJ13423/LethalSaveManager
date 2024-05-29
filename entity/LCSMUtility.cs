@@ -53,6 +53,16 @@ namespace LethalSaveManager.entity
                 MainForm.instance.loadBackupButton.Enabled = true;
                 MainForm.instance.renameBackupButton.Enabled = true;
             }
+
+            // Just in case
+            if (MainForm.gameSaveFileList.selectedSaveFileIndex >= MainForm.gameSaveFileList.saveFileButtons.Count)
+            {
+                MainForm.instance.backupSaveButton.Enabled = false;
+            }
+            else
+            {
+                MainForm.instance.backupSaveButton.Enabled = true;
+            }
         }
     }
 }

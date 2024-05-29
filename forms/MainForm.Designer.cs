@@ -187,7 +187,6 @@
             backupSaveFilesPanel.Name = "backupSaveFilesPanel";
             backupSaveFilesPanel.Size = new Size(548, 400);
             backupSaveFilesPanel.TabIndex = 44;
-            backupSaveFilesPanel.Scroll += backupSaveFilesPanel_Scroll;
             // 
             // backupSaveFileSectionTitle
             // 
@@ -298,7 +297,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button backupSaveButton;
         private Panel gameSaveFilesPanel;
         private Label gameSaveFileSelectionTitle;
         private Panel gameSaveFilesPanelBackPanel;
@@ -315,6 +313,7 @@
         private Button refreshSaveList;
         private Button refreshBackupList;
         private Panel backupSavePaneRightMarginBar;
+        internal Button backupSaveButton;
     }
 }
 
