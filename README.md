@@ -17,7 +17,7 @@ You can download the latest standalone executable from the [releases page](https
 3. Use the interface to manage your game saves.
 
 ## Screenshot 📸
-![UI Screenshot](placeholder-for-screenshot.png)
+![UI Screenshot](https://github.com/DJ13423/LethalSaveManager/assets/61391827/377ec5f5-50bd-4c18-ae91-c49461d47bee)
 
 ## Contributors 👥
 - [**DJ13423**](https://github.com/DJ13423)
