@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             backupSaveButton = new Button();
             loadBackupButton = new Button();
             renameBackupButton = new Button();
@@ -250,7 +251,7 @@
             appVersionLabel.Name = "appVersionLabel";
             appVersionLabel.Size = new Size(27, 21);
             appVersionLabel.TabIndex = 52;
-            appVersionLabel.Text = "v1";
+            appVersionLabel.Text = "v2";
             // 
             // appTitle
             // 
@@ -281,6 +282,7 @@
             Controls.Add(loadBackupButton);
             ForeColor = Color.FromArgb(147, 177, 166);
             FormBorderStyle = FormBorderStyle.Fixed3D;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimumSize = new Size(700, 300);
             Name = "MainForm";

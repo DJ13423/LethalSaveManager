@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RenameDialog));
             label2 = new Label();
             confirmButton = new Button();
             cancelButton = new Button();
@@ -132,6 +133,7 @@
             Controls.Add(panel2);
             ForeColor = Color.FromArgb(147, 177, 166);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(4, 3, 4, 3);
             Name = "RenameDialog";
             StartPosition = FormStartPosition.CenterParent;
