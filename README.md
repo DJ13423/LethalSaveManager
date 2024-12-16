@@ -30,6 +30,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contributing 🤝
 Contributions are welcome! If you have suggestions for improvements or find any bugs, please feel free to submit an issue or a pull request.
 
----
+## Download Count
 
-Thank you for using LethalSaveManager! If you encounter any issues, feel free to open an issue on GitHub.
+![GitHub release (v1)](https://img.shields.io/github/downloads/DJ13423/LethalSaveManager/v1/total)
+![GitHub release (v2)](https://img.shields.io/github/downloads/DJ13423/LethalSaveManager/v2/total)
