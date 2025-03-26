@@ -6,7 +6,7 @@ LethalSaveManager is a save manager for the game [*Lethal Company*](https://stor
 ## Features ✨
 - Create, delete, and rename backups of your save files.
 - Manage an unlimited number of saves.
-- Built using C#, .NET 8, and WPF for a robust and user-friendly experience.
+- Built using C#, .NET 8, and WinForms for a robust and user-friendly experience.
 
 ## Installation 🔧
 You can download the latest standalone executable from the [releases page](https://github.com/DJ13423/LethalSaveManager/releases/latest).
